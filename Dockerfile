@@ -28,5 +28,7 @@ RUN rpm-ostree install powertop iotop
 RUN rpm-ostree install docker-ce
 RUN rpm-ostree install fish alacritty
 
+RUN rpm-ostree install glibc.i686
+
 RUN rm -rf /tmp/* /var/*
 RUN ostree container commit
