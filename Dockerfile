@@ -13,13 +13,14 @@ RUN systemctl enable sshd.service
 RUN rpm-ostree install tailscale
 RUN systemctl enable tailscaled.service
 
+RUN rpm-ostree install davfs2 fuse fuse3
+
 # RUN rpm-ostree install waydroid
 # RUN systemctl enable waydroid-container.service
 
 RUN rpm-ostree install dbus-x11 qemu qemu-user-static qemu-user-binfmt virt-manager libvirt qemu qemu-user-static qemu-user-binfmt edk2-ovmf
 RUN rpm-ostree install adw-gtk3-theme papirus-icon-theme
 RUN rpm-ostree install gnome-tweaks gparted evolution evolution-ews
-# RUN rpm-ostree install policycoreutils-devel
 RUN rpm-ostree install powertop iotop
 RUN rpm-ostree install docker-ce
 RUN rpm-ostree install fish alacritty
